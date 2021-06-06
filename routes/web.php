@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.home');
+Route::get('/', "DashboardController@index"())->name('Dashboard');
+
+Route::prefix('Dashboard')->group(function () {
+    Route::get('users/{id}', function ($id) {
+        
+    });    
 });
+
+Route::resource('About', "AboutController");
