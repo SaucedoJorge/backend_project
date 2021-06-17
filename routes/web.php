@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "DashboardController@index"())->name('Dashboard');
-
 Route::prefix('Dashboard')->group(function () {
     Route::get('users/{id}', function ($id) {
         
