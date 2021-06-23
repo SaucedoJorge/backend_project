@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('Dashboard')->group(function () {
-    Route::get('users/{id}', function ($id) {
-        
-    });    
-});
+Route::get('/', "DashboardController@index")->name('dashboard');
 
-Route::resource('About', "AboutController");
+// Route::prefix('dashboard')->group(function () {
+//     Route::get('/', "DashboardController@index");
+// });
+
+Route::resource('about', "AboutController");
